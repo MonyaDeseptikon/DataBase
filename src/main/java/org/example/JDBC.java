@@ -12,9 +12,9 @@ public class JDBC {
         Connection con = getConnections(url, user, password);
         Statement statement = con.createStatement();
 //        statement.execute("DROP SCHEMA test");
-        statement.execute("CREATE SCHEMA test");
+        statement.execute("CREATE SCHEMA IF NOT EXISTS test");
 
-        statement.execute("CREATE TABLE test.table " +
+        statement.execute("CREATE TABLE IF NOT EXISTS test.table " +
                 "(id INT AUTO_INCREMENT PRIMARY KEY," +
                 "firstname VARCHAR(45) NULL," +
                 "lastname VARCHAR(45) NULL)");

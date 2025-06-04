@@ -22,7 +22,7 @@ public class Hibernate {
                 "броня INT NULL," +
                 "PRIMARY KEY(id))");
         ResultSet set = statement.executeQuery("SELECT * FROM test.magic;");
-        System.out.println(getDataFromSchema(set));
+        getDataFromSchema(set).forEach(s-> System.out.println(s));
         System.out.println(set.getMetaData());
         System.out.println(con.getMetaData());
     }
@@ -39,7 +39,7 @@ public class Hibernate {
         while (set.next()) {
             list.add(set.getInt(1) + " " + set.getString(2) + " " + set.getInt(3)+
                     " " + set.getInt(4)+
-                    " " + set.getInt(5));
+                    " " + set.getInt(5)+'\n');
         }
         return list;
     }

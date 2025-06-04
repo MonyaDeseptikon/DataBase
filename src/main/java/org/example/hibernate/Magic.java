@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Magic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idMagic;
+    private int id;
 
     @Column(name = "название")
     private String name;
@@ -33,8 +33,8 @@ public class Magic {
         this.armor = armor;
     }
 
-    public int getIdMagic() {
-        return idMagic;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -53,8 +53,8 @@ public class Magic {
         return armor;
     }
 
-    public void setIdMagic(int idMagic) {
-        this.idMagic = idMagic;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -71,5 +71,16 @@ public class Magic {
 
     public void setArmor(int armor) {
         this.armor = armor;
+    }
+
+    @Override
+    public String toString() {
+        return "Magic{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", damage=" + damage +
+                ", attBonus=" + attBonus +
+                ", armor=" + armor +
+                '}';
     }
 }
